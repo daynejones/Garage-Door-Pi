@@ -23,7 +23,7 @@ if ($_POST['password'])
 <script type="text/javascript" src="js/garage.js"></script>
 <script type="text/javascript" src="js/cursor.js"></script>
 <link rel="stylesheet" type="text/css" href="css/garage.css?23">
-<link rel="apple-touch-icon-precomposed" href="favicon.ico"/>
+<link rel="apple-touch-icon-precomposed" href="favicon.ico" />
 <link rel="apple-touch-startup-image" href="splash.png?223" /> 
 </head>
 <body>

@@ -4,9 +4,7 @@ $(document).ready(function(){
 	});
 
 	$("#pin").focus();
-	$("#pin").focus(function(){
-		$("#pin").setCursorPosition(0);
-	});
+	// clear input when typing begins
 	$("#pin").keypress(function(){
 		$(this).val($(this).val().replace("PIN",""));
 	});
@@ -15,9 +13,11 @@ $(document).ready(function(){
 		garage.status();
 });
 $.ajaxSetup({
-  headers: { "cache-control": "no-cache" }
+	// this is necessary because the freaking iPhone caches ajax requests... 
+	// seriously, who does that?
+	headers: { "cache-control": "no-cache" }
 });
-//postcount = Math.floor(Math.random()*99999);
+
 var garage = {	
 	// click handler for the page
 	click_controller : function(e)
@@ -30,15 +30,15 @@ var garage = {
 				$("#login").submit();
 				break;
 			case 'open' : 
-				// calls function to open door
+				// open door
 				garage.open();
 				break;
 			case 'close' :
-				// calls function to close door
+				// close door
 				garage.close();
 				break;
 			case 'status' :
-				// calls function to get status
+				// get status
 				garage.status();
 				break;
 			default:
@@ -56,14 +56,11 @@ var garage = {
 		$("#loading-text").html("LOADING");
 		$("#loading").show();
 
-		garage.checkAndClose();
+		garage.checkThenClose();
 	},
-	checkAndOpen : function(){
+	checkAndOpen : function(callback){
 		// call to get status
 		var postdata = {};
-		// hack to prevent mobileSafari's POST caching
-		//postdata.postcount = postcount;
-		//postcount++;
 
 		postdata.status = true;
 		postdata.quickstatus = true;
@@ -82,16 +79,13 @@ var garage = {
 					$("#message").show().html("ALREADY UP").delay(5000).fadeOut();
 				}
 				else
-					garage.actuallyOpen();
+					garage.initiateOpen();
 			}
 		},'json');
 	},
-	checkAndClose : function(){
+	checkThenClose : function(){
 		// call to get status
 		var postdata = {};
-		// hack to prevent mobileSafari's POST caching
-		//postdata.postcount = postcount;
-		//postcount++;
 
 		postdata.status = true;
 		postdata.quickstatus = true;
@@ -110,16 +104,13 @@ var garage = {
 					$("#message").show().html("ALREADY DOWN").delay(5000).fadeOut();
 				}
 				else
-					garage.actuallyClose();
+					garage.initiateClose();
 			}
 		},'json');
 	},
 	status : function(){
 		// call to get status
 		var postdata = {};
-		// hack to prevent mobileSafari's POST caching
-		//postdata.postcount = postcount;
-		//postcount++;
 
 		postdata.status = true;
 		postdata.quickstatus = true;
@@ -139,11 +130,8 @@ var garage = {
 			}
 		},'json');
 	},
-	actuallyClose : function(){
+	initiateClose : function(){
 		var postdata = {};
-		// hack to prevent mobileSafari's POST caching
-		//postdata.postcount = postcount;
-		//postcount++;
 
 		postdata.close = true;
 
@@ -156,9 +144,6 @@ var garage = {
 			{
 				$("#loading-text").html("CLOSING...");
 				var postdata2 = {};
-				// hack to prevent mobileSafari's POST caching
-				//postdata2.postcount = postcount;
-				//postcount++;
 
 				postdata2.status = true;
 				
@@ -174,14 +159,10 @@ var garage = {
 			}
 		},'json');
 	},
-	actuallyOpen : function	(){
+	initiateOpen : function	(){
 		var postdata = {};
-		// hack to prevent mobileSafari's POST caching
-		//postdata.postcount = postcount;
-		//postcount++;
 
 		postdata.open = true;
-
 
 		$.post('ajax/garage.php', postdata, function(data){
 			// do stuff
@@ -191,9 +172,6 @@ var garage = {
 			{
 				$("#loading-text").html("OPENING...");
 				var postdata2 = {};
-				// hack to prevent mobileSafari's POST caching
-				//postdata2.postcount = postcount;
-				//postcount++;
 
 				postdata2.status = true;
 				

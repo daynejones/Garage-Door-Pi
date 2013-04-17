@@ -1,3 +1,4 @@
+/** Cursor stuff borrowed and modified from jQuery4u.com **/
 jQuery.fn.setCursorPosition = function(position){
     if(this.lengh == 0) return this;
     return $(this).setSelection(position, position);
