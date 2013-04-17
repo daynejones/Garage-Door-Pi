@@ -14,6 +14,6 @@ Steps for reproducing my setup:
 These steps aren't extremely detailed so you will need to either know what you are doing or be prepared to learn a lot.
 
 To do:
-• Make it actually secure instead of a simple password
-• Put the garage door stuff into a class (Ruby?) so it is more readable and compact
-• Invent a low cost spacecraft
+1. Make it actually secure instead of a simple password
+2. Put the garage door stuff into a class (Ruby?) so it is more readable and compact
+3. Invent a low cost spacecraft
