@@ -1,0 +1,31 @@
+* { margin:0; padding:0; }
+.clear { clear:both; }
+body { margin:0; padding:0; font-family: Helvetica; background-color:#f1f1f1; font-weight: 100; font-size: 62.5% }
+
+.wrapper { width:100%; margin:0px auto 5.0em auto; }
+#container { width:400px; margin:3em auto; min-height:6em; }
+
+#open, #close, #message, #status, #test, #submit { width: 8em; margin: 1em auto; color: #333; font-size: 4em; padding: 1em; text-align: center; display: block; cursor: pointer; text-transform: uppercase; }
+
+#open { background-color: #49D1FF; }
+
+#close { background-color: #36B4E3;}
+
+#message { background-color: #E84E70; display: none }
+
+#status { background-color: #157396; color: #000 }
+
+#submit { background-color: #49D1FF; }
+
+#loading { position: absolute; background-color: #666; opacity: .9; width: 100%; height: 100%; top: 0;}
+#loading-text { width: 700px; position: absolute; left: 50%; top: 20%; font-size: 12em; margin-left: -350px; text-align: center }
+
+#pin { font-size: 15em; width:100%; text-align: center}
+
+/*** IPHONE STUFF ***/
+@media screen and (max-device-width: 640px) {
+	#container { width:100%; margin:3em auto; min-height:6em; }
+	#open, #close, #message, #status, #submit { width: 70%; margin: .5em auto; padding: 1.2em 1em; color: #333; font-size: 100px;  text-align: center; }
+
+	#pin { font-size: 25em; display:block; width:90%; margin: .2em auto 0; text-align: center}
+}
