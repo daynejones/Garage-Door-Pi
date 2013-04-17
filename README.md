@@ -12,3 +12,8 @@ Steps for reproducing my setup:
 6. Connect the switches to gpio 0 and gpio 1 so that when we read the ports, we know whether the door is up or down.
 
 These steps aren't extremely detailed so you will need to either know what you are doing or be prepared to learn a lot.
+
+To do:
+• Make it actually secure instead of a simple password
+• Put the garage door stuff into a class (Ruby?) so it is more readable and compact
+• Invent a low cost spacecraft
