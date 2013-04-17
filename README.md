@@ -1,7 +1,7 @@
 Garage-Door-Pi
 ==============
 
-A mobile(and desktop friendly) web app that will open your garage door, provided you have set up the raspberry pi properly.
+A mobile(and desktop friendly) web app that will open your garage door, provided you have set up a raspberry pi to initiate the garage door.
 
 Steps for reproducing my setup:
 
@@ -17,5 +17,5 @@ These steps aren't extremely detailed so you will need to either know what you a
 To do:
 
 1. Make it actually secure instead of a simple password
-2. Put the garage door stuff into a class (Ruby?) so it is more readable and compact
+2. Put the bash scripts into a class (Ruby?) so it is more readable and compact
 3. Invent a low cost spacecraft
