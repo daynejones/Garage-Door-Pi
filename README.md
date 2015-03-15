@@ -12,10 +12,10 @@ Steps for reproducing my setup:
 5. Setup magnetic reed switches; one that is powered when the door is closed and one that is powered when the door is open.
 6. Connect the switches to gpio 0 and gpio 1 so that when we read the ports, we know whether the door is up or down.
 
-These steps aren't extremely detailed so you will need to either know what you are doing or be prepared to learn a lot.
+These steps aren't extremely detailed and they will vary from setup to steup so you will need to either know what you are doing or be prepared to learn a lot.
 
 To do:
 
 1. Make it actually secure instead of a simple password
-2. Put the bash scripts into a class (Ruby?) so it is more readable and compact
+2. Put the bash scripts into a class so they are more readable and extendable
 3. Invent a low cost spacecraft
